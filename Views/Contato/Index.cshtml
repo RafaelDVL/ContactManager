@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Contato List";
+}
+
+<div class="text-start">
+    <h1 class="display-4">Contatos </h1>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Contato" asp-action="CriarContato" >Novo contato </a>
+    </div>
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Rafael</td>
+                <td>rafael@gmail.com</td>
+                <td>15997907807</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a role="button" class="btn btn-primary">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-controller="Contato" asp-action="ApagarContato">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jeansinho</td>
+                <td>raianlove@gmail.com</td>
+                <td>15997859786</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a role="button" class="btn btn-primary">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-controller="Contato" asp-action="ApagarContato">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+                <td>Jonatas</td>
+                <td>portadorDapaMaluca@gmail.com</td>
+                <td>15997859786</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a role="button" class="btn btn-primary">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-controller="Contato" asp-action="ApagarContato">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+
+  
+        </tbody>
+    </table>
+</div>

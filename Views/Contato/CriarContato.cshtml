@@ -1,0 +1,25 @@
+﻿<div class="text-start">
+    <h1 class="display-4">Novo Contato</h1>
+
+
+</div>
+
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="inputNome" aria-describedby="nome">
+    <div id="nomelHelp" class="form-text">Digite seu nome completo.</div>
+  </div>
+  <div class="mb-3">
+    <label for="InputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+      <label for="InputTelefone" class="form-label">Telefone</label>
+        <input type="tel" class="form-control" id="InputTelefone" aria-describedby="telefoneHelp">
+        <div id="telefoneHelp" class="form-text">Digite o seu numero de telefone.</div>
+    </div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+  <a class="btn btn-secundary" asp-controller="Contato" asp-action="Index">Voltar</a>
+</form>
