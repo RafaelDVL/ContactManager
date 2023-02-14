@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ContactManager.Models;
+using ContactManager.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContactManager.Controllers
 {
     public class ContatoController : Controller
     {
+        private readonly IContatoRepository _contatoRepository;
+
+        public ContatoController(IContatoRepository contatoRepository)
+        {
+            _contatoRepository= contatoRepository;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            List<ContatoModel> listContatos = _contatoRepository.GetAll();
+            return View(listContatos);
         }
 
         public IActionResult CriarContato()
@@ -22,6 +32,19 @@ namespace ContactManager.Controllers
         public IActionResult ApagarContato()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Criar(ContatoModel contato)
+        {
+            _contatoRepository.Adicionar(contato);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public List<ContatoModel> GetAll()
+        {
+            return _contatoRepository.GetAll();
         }
     }
 }
