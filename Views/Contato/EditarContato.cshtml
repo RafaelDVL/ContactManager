@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ContatoModel
+
 @{
+    ViewData["Title"] = "Editar Contato";
 }
+
+<div class="text-start">
+    <h1 class="display-4">Editar Contato</h1>
+</div>
+
+<form asp-controller="Contato" asp-action="Alterar" method="post">
+    <input type="hidden" asp-for="Id">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" id="inputNome" aria-describedby="nome">
+        <div id="nomelHelp" class="form-text">Digite seu nome completo.</div>
+    </div>
+    <div class="mb-3">
+        <label for="InputEmail1" class="form-label">Email address</label>
+        <input type="email" asp-for="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="InputTelefone" class="form-label">Telefone</label>
+        <input type="tel" asp-for="Telefone" class="form-control" id="InputTelefone" aria-describedby="telefoneHelp">
+        <div id="telefoneHelp" class="form-text">Digite o seu numero de telefone.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a class="btn btn-secundary" asp-controller="Contato" asp-action="Index">Voltar</a>
+</form>
